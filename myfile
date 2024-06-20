@@ -1,0 +1,114 @@
+class Node:
+    def _init_(self, data):
+        self.data = data 
+        self.next = None
+class LinkedList:
+    def _init_(self):
+        self.head = None
+        
+        def insert_at_end(self, data):
+            new_node = Node(data)
+            
+        
+        if self.head is None: 
+            self.head = new_node
+            return 
+        current = self.head
+        while current.next:
+            current = current.next 
+            current.next = new_node
+    
+    def print_list(self):
+        current = self.head
+        result = []
+        while current:
+            result.append(current.data)
+            current = current.next
+            print(result)
+            
+    def sort_ascending(self):
+        if self.head is None or self.head.next is None:
+            return 
+    def merge(left,right):
+        result = tail = None
+        while left and right:
+            if left.data <= right.data:
+                if result is None: 
+                    result = tail = None
+                    result = tail = left
+                else:
+                    if result is None:
+                        result = tail = right
+                    else:
+                        tail.next = right
+                        tail = tail.next
+                    right = right.next
+        tail.next = left if left else right
+        return result 
+        
+    def merge_sort(head):
+        
+        if head.next is None:
+            return head
+        slow = fast = head 
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        right = slow.next
+        slow.next = None
+        
+        left = merge_sort(head)
+        right = merge_sort(right)
+        
+        return merge(left, right)
+    
+    def sort_descending(self):
+        if self.head is None or self.head.next is None:
+            return
+        def reverse(head):
+            prev = None
+            current = head
+            while current:
+                next_node = current.next
+                current.next = prev
+                prev = current 
+                current = next_node
+            return prev
+            
+    def search(self, target):
+        current = self.head 
+        
+        while current:
+            if current.data == target:
+                return True
+            current = current.next 
+            return False 
+
+def main():
+    l1 = LinkedList()
+    l2 = LinkedList()
+    
+    while True:
+        try:
+            num1 = [int(num) for num in input().split() if num != 'done']
+            num2 = [int(num) for num in input().split() if num != 'done']
+            break 
+        except ValueError:
+            print()
+        
+    for number in num1:
+        l1.insert_at_end(number)
+    for number in num2:
+        lsit2.insert_at_end(number)
+    
+    print("list1")
+    l1.print_list()
+    print("list2")
+    l1.print_list()
+    
+    print("Sorted List")
+    l1_copy = LinkedList()
+    l1
+        
+            
+        
